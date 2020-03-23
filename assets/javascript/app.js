@@ -58,7 +58,7 @@ $(document).ready(function () {
 
         var startTime = moment(childSnapshot.val().arrival, "X").subtract(1, "years");
         console.log(startTime + " start Time")
-        var diffTime = moment().diff(moment(startTime), "hours");
+        var diffTime = moment().diff(moment(startTime), "minutes");
         console.log(diffTime + "  Time differce ")
 
         var tRem = diffTime % childSnapshot.val().frequency;
@@ -67,13 +67,13 @@ $(document).ready(function () {
         var tMin = childSnapshot.val().frequency - tRem;
         console.log(tMin + "min left");
 
-        var nextT = moment().add(tMin, "hours");
+        var nextT = moment().add(tMin, "minutes");
         console.log(nextT + "next Train");
 
         $("#name").append("<div><span class='member'>" + childSnapshot.val().name);
         $("#destination").append("<div><span class='member'>" + childSnapshot.val().destination);
         $("#frequency").append("<div><span class='member'>" + childSnapshot.val().frequency);
-        $("#arrival").append("<div><span class='member'>" + childSnapshot.val().arrival);
+        $("#arrival").append("<div><span class='member'>" + nextT.format("HH:mm"));
         $("#MinsAway").append("<div><span class='member'>" + tMin);
          
     });
