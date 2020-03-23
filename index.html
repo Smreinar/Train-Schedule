@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <!--Tittle-->
+    <title>Train Schedule</title>
+
+    <!--Bootstrap-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <!--CSS-->
+    <link rel="stylesheet" href="assets/css/stylesheet.css">
+
+    <!--MomentJs-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+
+    <!--Firebase Core-->
+    <script src="https://www.gstatic.com/firebasejs/7.12.0/firebase-app.js"></script>
+
+    <!--Firebase library-->
+    <script src="https://www.gstatic.com/firebasejs/7.12.0/firebase-database.js"></script>
+
+    <!--jQuery-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+</head>
+
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="jumbotron">
+            <h1>Polar Express</h1>
+        </div>
+        <!-- Train Board -->
+        <div class="row">
+            <div class="col-12">
+                <table class="table">
+                    <thead class="thead-light" id="tableBody">
+                        <tr>
+                            <th scope="col">Train Name</th>
+                            <th scope="col">Destination</th>
+                            <th scope="col">Frequency</th>
+                            <th scope="col">Next Arrival</th>
+                            <th scope="col">Minutes Away</th>
+                        </tr>
+                    </thead>
+                    <tbody id="table-body">
+                        <tr id="userInputTrain">
+                            <td scope="row" id="name"></td>
+                            <td scope="row" id="destination"></td>
+                            <td scope="row" id="start-Time"></td>
+                            <td scope="row" id="frequency"></td>
+                            <td scope="row" id="Minutes Away"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="col-12">
+            <!-- user train form -->
+            <form>
+                <!-- Train Name -->
+                <div class="form-group">
+                    <label for="name">Train Name</label>
+                    <input type="Text" class="form-control" id="trainName">
+                </div>
+                <!-- Train Destination -->
+                <div class="form-group">
+                    <label for="destination">Destination</label>
+                    <input type="Text" class="form-control" id="trainDestin">
+                </div>
+                <!-- First Train Starts -->
+                <div class="form-group">
+                    <label for="start-Time">First Train Time</label>
+                    <input type="Text" class="form-control" id="trainStart">
+                </div>
+                <!-- Time Frequency -->
+                <div class="form-group">
+                    <label for="frequency">Train Name</label>
+                    <input type="Text" class="form-control" id="trainFrequency">
+                </div>
+
+                <button type="submit" class="btn btn-success" id="submit">Add Train</button>
+
+            </form>
+        </div>
+    </div>
+
+    </div>
+</body>
+
+<!--javascript-->
+<script src="assets/javascript/app.js"></script>
+
+</html>
