@@ -52,6 +52,30 @@ $(document).ready(function () {
 
     });
 
+    //returning database input
+    database.ref().on("child_added", function(childSnapshot) {
+        console.log(childSnapshot.val());
 
+        var startTime = moment(childSnapshot.val().arrival, "X").subtract(1, "years");
+        console.log(startTime + " start Time")
+        var diffTime = moment().diff(moment(startTime), "hours");
+        console.log(diffTime + "  Time differce ")
+
+        var tRem = diffTime % childSnapshot.val().frequency;
+        console.log(tRem + " Time Remaining");
+
+        var tMin = childSnapshot.val().frequency - tRem;
+        console.log(tMin + "min left");
+
+        var nextT = moment().add(tMin, "hours");
+        console.log(nextT + "next Train");
+
+        $("#name").append("<div><span class='member'>" + childSnapshot.val().name);
+        $("#destination").append("<div><span class='member'>" + childSnapshot.val().destination);
+        $("#frequency").append("<div><span class='member'>" + childSnapshot.val().frequency);
+        $("#arrival").append("<div><span class='member'>" + childSnapshot.val().arrival);
+        $("#MinsAway").append("<div><span class='member'>" + tMin);
+         
+    });
 
 });
