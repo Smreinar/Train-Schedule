@@ -1,0 +1,19 @@
+body {
+    background-color: lightblue;
+}
+h1 {
+    text-align: center;
+    background-color: slategray;
+    color: snow;
+}
+
+.curtrain {
+    text-align: center;
+    background-color: green;
+    margin-bottom: 0;
+}
+
+.addtrain4 {
+    text-align: center;
+    background-color: green;
+}

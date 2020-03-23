@@ -28,16 +28,18 @@
 </head>
 
 <body>
+    <br>
     <div class="container">
         <!-- Header -->
-        <div class="jumbotron">
+        <div class="jumbotron bg-dark">
             <h1>Train Express Schedule</h1>
         </div>
         <!-- Train Board -->
         <div class="row">
             <div class="col-12">
-                <table class="table">
-                    <thead class="thead-light" id="tableBody">
+                <table class="table bg-success">
+                    <thead class="thead-secondary" id="tableBody">
+                        <h4 class="curtrain">Current Train Schedule</h4>
                         <tr>
                             <th scope="col">Train Name</th>
                             <th scope="col">Destination</th>
@@ -47,7 +49,7 @@
                         </tr>
                     </thead>
                     <tbody id="table-body">
-                        <tr id="userInputTrain">
+                        <tr class="bg-light" id="userInputTrain">
                             <td scope="row" id="name"></td>
                             <td scope="row" id="destination"></td>
                             <td scope="row" id="frequency"></td>
@@ -58,9 +60,13 @@
                 </table>
             </div>
         </div>
+        <br>
+        <hr>
+        <br>
         <div class="col-12">
             <!-- user train form -->
             <form>
+                <h4 class="addtrain4">Add Your Train!</h4>
                 <!-- Train Name -->
                 <div class="form-group">
                     <label for="name">Train Name</label>
@@ -85,10 +91,12 @@
                 <button type="submit" class="btn btn-success" id="submit">Add Train</button>
 
             </form>
+            <hr>
         </div>
     </div>
 
     </div>
+    <br><br><br><br>
 </body>
 
 <!--javascript-->
